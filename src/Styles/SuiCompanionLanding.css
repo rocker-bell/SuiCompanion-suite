@@ -1,0 +1,329 @@
+:root {
+  --bg-app: #f8f9fa;
+  --bg-sidebar: #fdfdfd;
+  --bg-card: #ffffff;
+  --border-color: #f1f3f5;
+  --text-main: #000000;
+  --text-muted: #868e96;
+  --btn-primary-bg: #000000;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-border: #e9ecef;
+  --nav-active-bg: #f1f3f5;
+  --sidebar-width: 260px;
+}
+
+
+
+/* Layout structural architecture */
+.app-container {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  min-width: 100%;
+  /* overflow-x: hidden; */
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  transition: transform 0.3s ease, margin-left 0.3s ease;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  background-color: var(--bg-app);
+  min-height: 100vh;
+}
+
+/* Sidebar Toggle Mechanics */
+.app-container.nav-closed .sidebar {
+  transform: translateX(-100%);
+}
+
+.app-container.nav-closed .main-wrapper {
+  margin-left: 0;
+}
+
+/* Navigation & Branding UI elements */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+  margin-bottom: 40px;
+}
+
+.brand-logo {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.sidebar-section {
+  padding: 0 12px;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: var(--border-color);
+}
+
+.nav-item.active {
+  background-color: var(--nav-active-bg);
+}
+
+/* App Header Elements */
+.main-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.toggle-btn:hover {
+  background-color: var(--border-color);
+}
+
+.suite-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Dashboard View Workspace Container */
+.main-content {
+  padding: 40px;
+  flex: 1;
+}
+
+.content-heading {
+  margin-bottom: 32px;
+}
+
+.view-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.view-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Card layout system & grid architectures */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-card {
+  grid-column: 1 / 2;
+}
+
+.stats-card {
+  grid-column: 2 / 3;
+}
+
+.apps-card {
+  grid-column: 1 / 3;
+  margin-top: 8px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Reusable Dynamic UI Interactive Buttons */
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  color: var(--text-main);
+}
+
+/* Empty UI State Elements Layout */
+.card-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  gap: 16px;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.card-empty-state p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Quick Stats Row UI elements */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.stat-row.highlight {
+  margin-top: 4px;
+}
+
+.stat-value {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+/* Empty alternative sample view template rendering fallback style */
+.sample-content {
+  padding: 40px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.sample-content h2 {
+  margin-bottom: 12px;
+}
+
+.sample-content p {
+  color: var(--text-muted);
+}
