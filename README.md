@@ -338,3 +338,51 @@ And if developers can:
 1.	Submit apps
 2.	Reach users more easily
 3.	Improve discoverability within the ecosystem
+
+
+## Security Considerations
+
+* Private keys must never be shared.
+* Private keys are stored only in memory.
+* Users are responsible for securely backing up credentials.
+* Environment variables must not be exposed publicly.
+
+## SuiCompanion Privacy Policy
+
+SuiCompanion does not collect or transmit any personal data. All user data, including notes, preferences, and account settings, is stored locally in your browser using Chrome's storage API. No data is shared with third parties.
+
+## Assets & Credits
+
+- **Icons & Images:** Some app icons and illustrations are sourced from [Icons8](https://icons8.com) or lucide-react icons.  
+- **Fonts & Styles:** Tailwind CSS utilities and fonts from Google Fonts.  
+- **Other Resources:** Any additional images, graphics, or libraries that contributed to the UI.
+
+## LIVE test
+
+
+- [Live Web template](https://rocker-bell.github.io/SuiCompanion-suite/)
+
+- [github repository](https://github.com/rocker-bell/SuiCompanion-suite)
+
+**Collaborators**
+
+**Presented and developed by [@rocker_bell](https://github.com/rocker_bell)**
+
+
+**FeedBack**
+If you have any feedback or review, feel free to contact me on telegram @HashForce_apex
+
+
+## License
+
+© 2026 rocker_bell. All rights reserved.
+
+This project and its source code are proprietary. 
+
+**Only the owner** (rocker_bell) or **explicitly designated parties** may use, copy, modify, merge, publish, distribute, sublicense, or sell any part of this project.
+
+Any unauthorized use, reproduction, modification, or distribution by others is strictly prohibited.
+
+##  Note
+
+> This project and repository are **actively maintained** and **regularly updated**.
