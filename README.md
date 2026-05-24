@@ -370,7 +370,8 @@ SuiCompanion does not collect or transmit any personal data. All user data, incl
 
 
 **FeedBack**
-If you have any feedback or review, feel free to contact me on telegram @HashForce_apex
+If you have any feedback or review, feel free to contact me on telegram 
+@SuiForce
 
 
 ## License
